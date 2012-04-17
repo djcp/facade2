@@ -1,0 +1,11 @@
+development:
+  sesame_uri: http://localhost:8080/openrdf-sesame
+  default_repository: facadedev
+
+production:
+  sesame_uri: http://localhost:8080/openrdf-sesame
+  default_repository: facadeproduction
+
+test:
+  sesame_uri: http://localhost:8080/openrdf-sesame
+  default_repository: facadetest

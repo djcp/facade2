@@ -16,4 +16,5 @@
 tmp/*
 *.swp
 sesame/
+config/facade2.yml
 
