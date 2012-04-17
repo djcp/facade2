@@ -1,3 +1,17 @@
 = Facade
 
 Coming soon!
+
+== Developer notes
+
+Sesame RDF server developer quickstart guide:
+
+# Download apache tomcat ( http://tomcat.apache.org/download-60.cgi ), extract it and read RUNNING.txt. Make sure you have a jre installed that fulfills tomcat's requirements. On ubuntu/debian, you want openjdk-6-jre and/or openjdk-6-jre-headless.
+# Download sesame. ( http://sourceforge.net/projects/sesame/files/Sesame%202/ ). Extract it and copy the .war files from openrdf-sesame-<your version>/war/ to apache-tomcat-<your version>/webapps/
+# cd to the apache tomcat root path and run ./bin/startup.sh You should now be able to access http://localhost:8080/openrdf-workbench/ and http://localhost:8080/openrdf-sesame/ in your browser. This works great under a normal user account.
+# Use ./bin/shutdown.sh to shutdown tomcat.
+
+== Contributors
+
+* Dan Collis-Puro, Berkman Center for Internet & Society.
+
