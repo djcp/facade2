@@ -39,6 +39,23 @@ module Facade2::Server
           :object => RDF::Literal.new('asdfasd')
       )).should == false
     end
+  end
+
+  describe 'Querying for RDF statements' do
+    before(:all) do
+      @sesame_server = connect_to_sesame_server
+      @repo = connect_to_repo(@sesame_server)
+    end
+
+    it 'should be able to find titles' do
+      query = RDF::Query.new do
+        pattern['<file://C:/fakepath/usip-sample_PIM.rdf.xml>', RDF.type, RDF::DC.title]
+      end
+      solutions = query.execute(@repo)
+
+      puts solutions.inspect
+
+    end
 
   end
 
