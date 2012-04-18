@@ -42,9 +42,9 @@ def connect_to_repo(server,repo = Facade2::Application.config.default_repository
 end
 
 def create_dcterms_statement
-  @dcterms_created = RDF::Statement.new(
-    :subject => RDF::URI.new('<usip-sample:FILE-8>'),
+  RDF::Statement.new(
+    :subject => RDF::URI.new('usip-sample:FILE-8'),
     :predicate => RDF::DC.title,
-    :object => '070207_Atrium_view_Donor.jpg'
+    :object => RDF::Literal.new('070207_Atrium_view_Donor.jpg')
   )
 end
