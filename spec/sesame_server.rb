@@ -48,12 +48,24 @@ module Facade2::Server
     end
 
     it 'should be able to find titles' do
+#      query = RDF::Query.new({
+#        :pim => {
+##          RDF.type => RDF::URI.new('http://libraries.mit.edu/ontologies/pim/pim1.0#File'),
+##          RDF::DC.title => :title,
+#          :pim => RDF::URI.new('usip-sample:FILE-64')
+#      }
+#      })
+
       query = RDF::Query.new do
-        pattern['<file://C:/fakepath/usip-sample_PIM.rdf.xml>', RDF.type, RDF::DC.title]
+        pattern [:project, RDF.type, RDF::URI.new('http://libraries.mit.edu/ontologies/pim/pim1.0#Project')]
+       # pattern [:file, RDF.type, RDF::URI.new('usip-sample:FILE-73')]
       end
+
       solutions = query.execute(@repo)
 
-      puts solutions.inspect
+      solutions.each do |sol|
+        puts sol.to_hash.inspect
+      end
 
     end
 
